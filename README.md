@@ -11,6 +11,7 @@ React, Tailwind, package manager, or build step required.
   index.html
   about.html
   visit.html
+  next-steps.html
   give.html
   assets/
     css/
@@ -32,7 +33,10 @@ repository root on GitHub Pages, including project-site URLs such as
 
 ## Notes
 
-- `Listen` and `Connect` navigation links are placeholders for future pages.
+- `Teachings` anchors to the homepage teaching section. Podcast and YouTube
+  links are placeholders until real channel URLs are available.
+- `next-steps.html` is a polished content placeholder for connection pathways,
+  groups, serving, prayer, faith conversations, and events.
 - The Plan a Visit form is visual only and does not submit.
 - The PayFast button is disabled until a real payment URL is configured.
 - Unsplash images and Sunrise Church PDF/form links are loaded from their

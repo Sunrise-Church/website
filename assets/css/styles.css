@@ -146,11 +146,11 @@ body.menu-open .brand span {
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 22px;
 }
 
 .desktop-nav a {
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -613,6 +613,30 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   letter-spacing: 0;
 }
 
+.podcast-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.podcast-links a {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.podcast-links a:hover {
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
 .button-row {
   display: flex;
   flex-wrap: wrap;
@@ -1058,6 +1082,18 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   align-items: start;
 }
 
+.visit-page-shell {
+  padding-bottom: 0;
+}
+
+.visit-intro {
+  max-width: 620px;
+  margin: -42px 0 46px;
+  color: var(--color-stone-600);
+  font-size: 1.18rem;
+  line-height: 1.75;
+}
+
 .info-stack {
   display: grid;
   gap: 36px;
@@ -1148,6 +1184,123 @@ input:focus,
 select:focus {
   outline: 2px solid var(--color-orange);
   outline-offset: 2px;
+}
+
+.visit-expect {
+  padding: 108px 0 112px;
+}
+
+.section-heading-row.compact {
+  margin-bottom: 42px;
+}
+
+.expect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.expect-card,
+.next-step-card {
+  border: 1px solid var(--color-stone-100);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: 0 1px 0 rgba(12, 10, 9, 0.03);
+}
+
+.expect-card {
+  padding: 34px;
+}
+
+.expect-card h3,
+.next-step-card h2 {
+  margin: 22px 0 12px;
+  font-size: 1.5rem;
+  line-height: 1.12;
+}
+
+.expect-card p,
+.next-step-card p,
+.content-note p {
+  margin: 0;
+  color: var(--color-stone-500);
+  line-height: 1.68;
+}
+
+.next-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 56px;
+  align-items: end;
+  margin-bottom: 72px;
+}
+
+.next-hero .page-title {
+  margin-bottom: 0;
+}
+
+.next-hero .statement {
+  margin-bottom: 10px;
+}
+
+.next-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 96px;
+}
+
+.next-step-card {
+  display: flex;
+  min-height: 316px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 36px;
+}
+
+.next-step-card .card-link,
+.next-step-card .btn {
+  margin-top: auto;
+}
+
+.next-step-card.featured {
+  grid-column: span 2;
+  color: var(--color-white);
+  background: var(--color-stone-950);
+}
+
+.next-step-card.featured h2 {
+  margin-top: 12px;
+  font-size: 3rem;
+}
+
+.next-step-card.featured p {
+  max-width: 580px;
+  margin-bottom: 32px;
+  color: var(--color-stone-300, #d6d3d1);
+  font-size: 1.16rem;
+}
+
+.step-kicker {
+  color: var(--color-orange);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.content-note {
+  margin-bottom: 112px;
+  padding: 48px;
+  border: 1px solid var(--color-stone-100);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+}
+
+.content-note h2 {
+  margin: 0 0 16px;
+  font-size: 2.2rem;
+  line-height: 1.08;
 }
 
 .quote-copy {
@@ -1269,8 +1422,15 @@ select:focus {
 
   .two-column,
   .card-grid.three,
-  .giving-grid {
+  .giving-grid,
+  .expect-grid,
+  .next-hero,
+  .next-steps-grid {
     grid-template-columns: 1fr;
+  }
+
+  .next-step-card.featured {
+    grid-column: auto;
   }
 
   .section,
@@ -1296,6 +1456,10 @@ select:focus {
 
   .feature-card p {
     min-height: 0;
+  }
+
+  .visit-expect {
+    padding: 92px 0;
   }
 }
 
@@ -1357,6 +1521,15 @@ select:focus {
     font-size: 3.45rem;
   }
 
+  .next-hero .page-title {
+    margin-bottom: 0;
+  }
+
+  .visit-intro {
+    margin-top: -24px;
+    font-size: 1.05rem;
+  }
+
   .two-column,
   .intro-grid,
   .values-pastor,
@@ -1374,16 +1547,20 @@ select:focus {
   }
 
   .feature-card,
+  .expect-card,
+  .next-step-card,
   .beliefs-panel,
   .values-card,
   .form-card,
   .giving-card,
-  .connect-panel {
+  .connect-panel,
+  .content-note {
     padding: 28px;
   }
 
   .beliefs-panel h2,
-  .connect-panel h2 {
+  .connect-panel h2,
+  .next-step-card.featured h2 {
     font-size: 2.4rem;
   }
 
