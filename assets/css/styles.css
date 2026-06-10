@@ -280,7 +280,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.42);
+  background: rgba(0, 0, 0, 0.5);
   z-index: -2;
 }
 
