@@ -1231,16 +1231,24 @@ select:focus {
   grid-template-columns: minmax(0, 0.85fr) minmax(420px, 1.15fr);
   gap: 48px;
   align-items: center;
-  margin-bottom: 88px;
+  margin-top: -18px;
+  margin-bottom: 56px;
 }
 
 .next-hero .page-title {
-  margin-bottom: 22px;
+  margin-bottom: 18px;
+  font-size: clamp(3.6rem, 6.2vw, 5.7rem);
+  line-height: 0.98;
 }
 
 .next-hero .statement {
-  max-width: 560px;
+  max-width: 480px;
   margin-bottom: 0;
+  color: var(--color-stone-500);
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.72;
+  text-transform: none;
 }
 
 .next-hero-image,
@@ -1251,7 +1259,7 @@ select:focus {
 }
 
 .next-hero-image {
-  min-height: 300px;
+  min-height: 280px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
 }
@@ -1606,11 +1614,16 @@ select:focus {
 
   .next-hero {
     gap: 28px;
-    margin-bottom: 68px;
+    margin-top: -10px;
+    margin-bottom: 48px;
+  }
+
+  .next-hero .page-title {
+    font-size: 3.1rem;
   }
 
   .next-hero-image {
-    min-height: 220px;
+    min-height: 200px;
   }
 
   .next-primary,
