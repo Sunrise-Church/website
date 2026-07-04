@@ -23,16 +23,25 @@
     menuToggle.setAttribute("aria-expanded", String(open));
   };
 
-  const currentFile = (() => {
-    const file = window.location.pathname.split("/").pop();
-    return file === "" ? "index.html" : file;
-  })();
+  const normalizePath = (path) => {
+    const withoutIndex = path.replace(/\/index\.html$/, "/");
+    return withoutIndex.endsWith("/") ? withoutIndex : `${withoutIndex}/`;
+  };
+
+  const currentPath = normalizePath(window.location.pathname);
 
   document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
 
-    if (href === currentFile || (currentFile === "index.html" && href === "index.html")) {
-      link.classList.add("is-active");
+    if (href && !href.startsWith("#")) {
+      try {
+        const linkUrl = new URL(href, window.location.href);
+        if (linkUrl.origin === window.location.origin && normalizePath(linkUrl.pathname) === currentPath) {
+          link.classList.add("is-active");
+        }
+      } catch {
+        // Ignore non-URL hrefs.
+      }
     }
 
     if (link.hasAttribute("data-placeholder-link")) {
