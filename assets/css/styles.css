@@ -1086,6 +1086,85 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   padding-bottom: 0;
 }
 
+.first-sundays-page-shell {
+  padding-bottom: 96px;
+}
+
+.first-sundays-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.first-sundays-hero .page-title {
+  margin-bottom: 28px;
+  font-size: clamp(3.2rem, 5.8vw, 5.6rem);
+}
+
+.first-sundays-intro {
+  padding: 46px;
+  border: 1px solid var(--color-stone-100);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.first-sundays-intro .large-copy:last-child {
+  margin-bottom: 0;
+}
+
+.first-sundays-section {
+  margin-top: 96px;
+}
+
+.first-sundays-details {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 64px;
+  align-items: start;
+  padding: 64px;
+  border-radius: var(--radius-lg);
+  color: var(--color-white);
+  background: var(--color-stone-950);
+}
+
+.first-sundays-details .section-title {
+  margin-bottom: 0;
+}
+
+.details-list {
+  display: grid;
+  gap: 28px;
+}
+
+.details-list article {
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.details-list article:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.details-list span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-orange);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.details-list p {
+  margin: 0;
+  color: var(--color-stone-200);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
 .visit-intro {
   max-width: 620px;
   margin: -42px 0 46px;
@@ -1479,6 +1558,8 @@ select:focus {
   .card-grid.three,
   .giving-grid,
   .expect-grid,
+  .first-sundays-hero,
+  .first-sundays-details,
   .next-hero,
   .next-primary-grid,
   .next-secondary-grid {
@@ -1520,6 +1601,10 @@ select:focus {
 
   .visit-expect {
     padding: 92px 0;
+  }
+
+  .first-sundays-section {
+    margin-top: 76px;
   }
 }
 
@@ -1608,8 +1693,18 @@ select:focus {
   .values-card,
   .form-card,
   .giving-card,
+  .first-sundays-intro,
+  .first-sundays-details,
   .connect-panel {
     padding: 28px;
+  }
+
+  .first-sundays-hero {
+    gap: 24px;
+  }
+
+  .first-sundays-hero .page-title {
+    font-size: 3rem;
   }
 
   .next-hero {
