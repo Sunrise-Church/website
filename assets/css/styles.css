@@ -931,7 +931,6 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 .quote-image img {
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
-  filter: grayscale(1);
 }
 
 .quote-image div {
@@ -1687,6 +1686,17 @@ select:focus {
 
   .page-title {
     font-size: 6.6rem;
+  }
+}
+
+@media (min-width: 921px) {
+  .about-page .page-shell {
+    padding-top: 128px;
+  }
+
+  .about-page .page-title {
+    margin-bottom: 48px;
+    font-size: 5.6rem;
   }
 }
 
