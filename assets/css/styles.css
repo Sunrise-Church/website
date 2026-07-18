@@ -833,6 +833,15 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   text-transform: uppercase;
 }
 
+.footer-location-link {
+  display: inline-block;
+  color: inherit;
+}
+
+.footer-location-link:hover {
+  color: var(--color-white);
+}
+
 .social-links {
   display: flex;
   gap: 12px;
@@ -1084,6 +1093,91 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 
 .visit-page-shell {
   padding-bottom: 0;
+}
+
+.visit-hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  align-items: stretch;
+  overflow: hidden;
+  color: var(--color-white);
+  isolation: isolate;
+}
+
+.visit-hero-image,
+.visit-hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.visit-hero-image {
+  z-index: 0;
+  object-fit: cover;
+}
+
+.visit-hero-overlay {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(12, 10, 9, 0.48), rgba(12, 10, 9, 0.14) 54%, rgba(12, 10, 9, 0.34)),
+    linear-gradient(180deg, rgba(12, 10, 9, 0.18), rgba(12, 10, 9, 0.06) 42%, rgba(12, 10, 9, 0.42));
+}
+
+.visit-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 32px, var(--container));
+  min-height: 100vh;
+  text-align: left;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.72fr);
+  gap: 64px;
+  align-items: stretch;
+  padding-top: 128px;
+  padding-bottom: 82px;
+}
+
+.visit-copy {
+  align-self: start;
+  padding-top: clamp(42px, 8vh, 96px);
+}
+
+.visit-copy .page-title {
+  margin-bottom: 0;
+  color: var(--color-white);
+  font-size: clamp(4.2rem, 7.4vw, 7rem);
+  text-align: left;
+}
+
+.visit-copy .visit-intro {
+  max-width: 640px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  text-align: left;
+}
+
+.visit-details-card {
+  align-self: start;
+  margin-top: clamp(42px, 8vh, 96px);
+  padding: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  background: var(--color-stone-950);
+  box-shadow: 0 24px 70px rgba(12, 10, 9, 0.2);
+}
+
+.visit-details-card .info-row {
+  gap: 18px;
+}
+
+.visit-details-card .info-row h2 {
+  color: var(--color-white);
+}
+
+.visit-details-card .info-row p {
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .first-sundays-page-shell {
@@ -1668,6 +1762,26 @@ select:focus {
     padding: 92px 0;
   }
 
+  .visit-hero {
+    min-height: 0;
+  }
+
+  .visit-hero-content {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 144px;
+    padding-bottom: 72px;
+  }
+
+  .visit-copy {
+    padding-top: 0;
+  }
+
+  .visit-details-card {
+    margin-top: 0;
+  }
+
   .first-sundays-section,
   .midweek-section {
     margin-top: 76px;
@@ -1735,6 +1849,10 @@ select:focus {
   .visit-intro {
     margin-top: -24px;
     font-size: 1.05rem;
+  }
+
+  .visit-copy .visit-intro {
+    margin-top: 0;
   }
 
   .two-column,
@@ -1812,6 +1930,16 @@ select:focus {
   .next-step-card-secondary img {
     aspect-ratio: 1.6;
     height: auto;
+  }
+
+  .visit-hero-content {
+    gap: 32px;
+    padding-top: 124px;
+    padding-bottom: 56px;
+  }
+
+  .visit-details-card {
+    padding: 28px;
   }
 
   .beliefs-panel h2,
