@@ -1667,6 +1667,7 @@ select:focus {
   color: var(--color-stone-600);
   font-size: 1.02rem;
   line-height: 1.8;
+  text-align: justify;
 }
 
 .giving-grid {
