@@ -1642,7 +1642,13 @@ select:focus {
   border-radius: var(--radius-lg);
   object-fit: cover;
   object-position: center;
+  filter: grayscale(1);
   box-shadow: var(--shadow-soft);
+  transition: filter 300ms ease;
+}
+
+.giving-intro img:hover {
+  filter: grayscale(0);
 }
 
 .giving-intro div {
@@ -1723,6 +1729,24 @@ select:focus {
 
 .giving-card.online p {
   color: rgba(255, 255, 255, 0.88);
+}
+
+.payfast-form label span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.payfast-form input[type="number"] {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: var(--color-white);
+}
+
+.payfast-form .btn {
+  width: 100%;
+}
+
+.payfast-form .btn:hover {
+  color: var(--color-white);
+  background: var(--color-black);
 }
 
 .small-note {

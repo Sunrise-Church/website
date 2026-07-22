@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="Giving details for Sunrise Church, including EFT details and online giving status."
+      content="Give to Sunrise Church securely online with PayFast or via EFT."
     >
     <title>Give | Sunrise Church</title>
     <link rel="icon" href="../favicon.ico" sizes="any">
@@ -74,7 +74,7 @@
             </p>
           </div>
           <img
-            src="../assets/images/worship.jpg"
+            src="../assets/images/hands_worship.jpg"
             alt="People worshipping together at Sunrise Church"
           >
         </article>
@@ -95,13 +95,43 @@
             <div>
               <h2>Online Giving</h2>
               <p>
-                The PayFast giving link is not active yet. Please use EFT for
-                this version of the site.
+                Give securely online with PayFast. Enter the amount you would
+                like to give below.
               </p>
             </div>
-            <button class="btn btn-disabled light-disabled" type="button" disabled>
-              PayFast Coming Soon
-            </button>
+            <form
+              class="payfast-form"
+              name="PayFastPayNowForm"
+              action="https://payment.payfast.io/eng/process"
+              method="post"
+            >
+              <input type="hidden" name="cmd" value="_paynow">
+              <input type="hidden" name="receiver" value="32738295">
+              <input type="hidden" name="return_url" value="https://www.sunrisechurch.co.za/give">
+              <input type="hidden" name="cancel_url" value="https://www.sunrisechurch.co.za/give">
+              <input type="hidden" name="item_name" value="Give via PayFast">
+              <input
+                type="hidden"
+                name="item_description"
+                value="Give towards the work of Sunrise Church."
+              >
+              <label for="PayFastAmount">
+                <span>Amount (ZAR)</span>
+                <input
+                  required
+                  id="PayFastAmount"
+                  type="number"
+                  step="0.01"
+                  name="amount"
+                  min="5.00"
+                  placeholder="100.00"
+                  value="100"
+                >
+              </label>
+              <button class="btn btn-light" type="submit">
+                Give with PayFast
+              </button>
+            </form>
           </article>
         </div>
       </section>
