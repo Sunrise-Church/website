@@ -893,6 +893,10 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   line-height: 1.8;
 }
 
+.about-page .large-copy {
+  text-align: justify;
+}
+
 .quote-image {
   position: relative;
 }
