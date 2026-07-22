@@ -208,11 +208,20 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   position: fixed;
   inset: 0;
   z-index: 70;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
   padding: 28px;
-  color: var(--color-stone-900);
-  background: var(--color-white);
+  color: var(--color-white);
+  background: rgba(12, 10, 9, 0.94);
+}
+
+.mobile-menu::after {
+  content: "";
+  margin-top: auto;
+  border-top: 1px solid var(--color-white);
 }
 
 .mobile-menu[hidden] {
@@ -227,7 +236,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .mobile-brand {
-  color: var(--color-stone-900);
+  color: var(--color-white);
 }
 
 .mobile-nav {
@@ -236,6 +245,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .mobile-nav a {
+  color: var(--color-white);
   font-size: 2.8rem;
   font-weight: 300;
   line-height: 1;
@@ -245,15 +255,6 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 .mobile-nav a:hover,
 .mobile-nav a.is-active {
   color: var(--color-orange);
-}
-
-.mobile-tagline {
-  margin: auto 0 0;
-  padding-top: 28px;
-  border-top: 1px solid var(--color-stone-100);
-  color: var(--color-stone-500);
-  font-family: var(--font-serif);
-  font-style: italic;
 }
 
 .hero {
