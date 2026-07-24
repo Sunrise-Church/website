@@ -2027,6 +2027,11 @@ select:focus {
     padding-left: 24px;
   }
 
+  .about-page .large-copy,
+  .giving-intro p {
+    text-align: left;
+  }
+
   .first-sundays-hero,
   .midweek-hero {
     gap: 24px;
