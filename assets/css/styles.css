@@ -14,8 +14,8 @@
   --color-stone-900: #1c1917;
   --color-stone-950: #0c0a09;
   --color-brand-orange: #fc7d5d;
-  --color-orange: #ea580c;
-  --color-orange-dark: #c2410c;
+  --color-orange: #df5b3b;
+  --color-orange-dark: #bd4529;
   --container: 1180px;
   --radius-sm: 12px;
   --radius-md: 18px;
@@ -836,7 +836,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 
 .site-footer h3 {
   margin: 0 0 20px;
-  color: var(--color-orange);
+  color: var(--color-brand-orange);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.14em;
