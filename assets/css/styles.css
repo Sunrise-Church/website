@@ -510,6 +510,10 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   border-color: var(--color-stone-900);
 }
 
+.rhythms-link-mobile {
+  display: none;
+}
+
 .card-grid {
   display: grid;
   gap: 28px;
@@ -2133,5 +2137,120 @@ select:focus {
   .footer-bottom div {
     flex-wrap: wrap;
     gap: 18px;
+  }
+
+  .home-page .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .home-page .two-column {
+    gap: 36px;
+  }
+
+  .home-page .image-mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .home-page .mosaic-column {
+    gap: 10px;
+  }
+
+  .home-page .image-mosaic img,
+  .home-page .stat-card,
+  .home-page .accent-card {
+    height: 150px;
+    min-height: 150px;
+    border-radius: var(--radius-md);
+  }
+
+  .home-page .stat-card,
+  .home-page .accent-card {
+    padding: 18px;
+  }
+
+  .home-page .stat-card strong {
+    font-size: 1.55rem;
+  }
+
+  .home-page .stat-card span {
+    font-size: 0.65rem;
+  }
+
+  .home-page .accent-card svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .home-page .accent-card p {
+    font-size: 1.05rem;
+  }
+
+  .home-page .section-heading-row {
+    gap: 0;
+    margin-bottom: 32px;
+  }
+
+  .home-page .card-grid {
+    gap: 14px;
+  }
+
+  .home-page .feature-card {
+    padding: 22px;
+  }
+
+  .home-page .feature-card .icon-badge {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-sm);
+  }
+
+  .home-page .feature-card .icon-badge svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .home-page .feature-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+  }
+
+  .home-page .feature-card p {
+    margin-bottom: 18px;
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+
+  .home-page .feature-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .home-page .rhythms-link-desktop {
+    display: none;
+  }
+
+  .home-page .rhythms-link-mobile {
+    display: inline-block;
+    margin-top: 28px;
+  }
+
+  .home-page .teaching-section .media-card {
+    aspect-ratio: 16 / 9;
+  }
+
+  .home-page .teaching-section .media-card.tilted {
+    transform: none;
+  }
+
+  .home-page .teaching-section .play-button {
+    width: 64px;
+    height: 64px;
+  }
+
+  .home-page .teaching-section .play-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
