@@ -606,8 +606,48 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .teaching-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 500px;
+  padding: 0;
   color: var(--color-white);
   background: var(--color-stone-950);
+}
+
+.teaching-background,
+.teaching-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.teaching-background {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center 38%;
+  opacity: 0.3;
+  filter: grayscale(1) contrast(0.9) brightness(0.65);
+  transform: scale(1);
+}
+
+.teaching-backdrop {
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(17, 17, 15, 0.96) 0%, rgba(17, 17, 15, 0.83) 44%, rgba(17, 17, 15, 0.68) 100%),
+    linear-gradient(0deg, rgba(17, 17, 15, 0.35), rgba(17, 17, 15, 0.35));
+}
+
+.teaching-content {
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.teaching-copy {
+  width: min(100%, 610px);
+  padding: 88px 0;
 }
 
 .media-card {
@@ -659,7 +699,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 
 .teaching-title {
   margin: 0 0 28px;
-  font-size: 4.6rem;
+  font-size: clamp(3rem, 5vw, 4.6rem);
   font-weight: 900;
   line-height: 0.98;
   letter-spacing: 0;
@@ -687,6 +727,19 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   border-color: rgba(255, 255, 255, 0.34);
   background: rgba(255, 255, 255, 0.14);
   transform: translateY(-2px);
+}
+
+.teaching-section .button-row .btn {
+  min-width: 184px;
+  box-shadow: var(--shadow-strong);
+}
+
+.teaching-section .podcast-links a:first-child {
+  display: none;
+}
+
+.teaching-section .podcast-links {
+  margin-top: 22px;
 }
 
 .button-row {
@@ -2319,6 +2372,19 @@ select:focus {
     gap: 36px;
   }
 
+  .home-page .teaching-section {
+    min-height: 0;
+    padding: 0;
+  }
+
+  .home-page .teaching-content {
+    min-height: 0;
+  }
+
+  .home-page .teaching-copy {
+    padding: 72px 0;
+  }
+
   .home-page .image-mosaic {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
@@ -2403,21 +2469,7 @@ select:focus {
     margin-top: 28px;
   }
 
-  .home-page .teaching-section .media-card {
-    aspect-ratio: 16 / 9;
-  }
-
-  .home-page .teaching-section .media-card.tilted {
-    transform: none;
-  }
-
-  .home-page .teaching-section .play-button {
-    width: 64px;
-    height: 64px;
-  }
-
-  .home-page .teaching-section .play-button svg {
-    width: 1.5rem;
-    height: 1.5rem;
+  .home-page .teaching-backdrop {
+    background: rgba(17, 17, 15, 0.84);
   }
 }
