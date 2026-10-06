@@ -626,10 +626,10 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 .teaching-background {
   z-index: -2;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: left 35%;
   opacity: 0.3;
   filter: grayscale(1) contrast(0.9) brightness(0.65);
-  transform: scale(1);
+  transform: scale(0.94);
 }
 
 .teaching-backdrop {
