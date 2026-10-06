@@ -563,8 +563,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .sunday-gathering-image {
-  object-fit: contain;
-  background: var(--color-stone-950);
+  object-fit: cover;
 }
 
 .feature-card:hover .feature-card-image {
