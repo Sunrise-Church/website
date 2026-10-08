@@ -1151,21 +1151,20 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .beliefs-panel h2 {
-  margin: 0 0 36px;
+  margin: 0;
   font-size: 1.8rem;
   line-height: 1.05;
 }
 
 .beliefs-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
+  align-items: start;
   gap: 48px;
 }
 
 .beliefs-image {
-  width: calc(100% + 80px);
-  max-width: none;
+  width: 100%;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
   object-fit: cover;
@@ -1201,7 +1200,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 
 .pastor-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.7fr);
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1fr);
   align-items: center;
   gap: 40px;
 }
