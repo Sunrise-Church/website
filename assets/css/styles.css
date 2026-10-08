@@ -290,6 +290,14 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   z-index: -3;
 }
 
+.community-page .hero-image {
+  object-position: center 40%;
+}
+
+.community-page .hero-content {
+  transform: translateY(14vh);
+}
+
 .hero-overlay {
   background: rgba(0, 0, 0, 0.5);
   z-index: -2;
@@ -307,6 +315,14 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   font-weight: 900;
   line-height: 0.94;
   letter-spacing: 0;
+}
+
+.community-page .hero h1 {
+  font-size: 3.5rem;
+}
+
+.about-page .hero h1 {
+  font-size: 3.5rem;
 }
 
 .hero p {
@@ -347,7 +363,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 
 .eyebrow {
   display: block;
-  margin-bottom: 22px;
+  margin: 0 0 22px;
   color: var(--color-orange);
   font-size: 0.76rem;
   font-weight: 800;
@@ -542,6 +558,16 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   width: 100%;
   height: 210px;
   object-fit: cover;
+  filter: grayscale(1);
+  transition: filter 300ms ease;
+}
+
+.sunday-gathering-image {
+  object-fit: cover;
+}
+
+.feature-card:hover .feature-card-image {
+  filter: grayscale(0);
 }
 
 .feature-card-content {
@@ -579,8 +605,48 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .teaching-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 500px;
+  padding: 0;
   color: var(--color-white);
   background: var(--color-stone-950);
+}
+
+.teaching-background,
+.teaching-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.teaching-background {
+  z-index: -2;
+  object-fit: cover;
+  object-position: left 35%;
+  opacity: 0.3;
+  filter: grayscale(1) contrast(0.9) brightness(0.65);
+  transform: scale(0.94);
+}
+
+.teaching-backdrop {
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(17, 17, 15, 0.96) 0%, rgba(17, 17, 15, 0.83) 44%, rgba(17, 17, 15, 0.68) 100%),
+    linear-gradient(0deg, rgba(17, 17, 15, 0.35), rgba(17, 17, 15, 0.35));
+}
+
+.teaching-content {
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.teaching-copy {
+  width: min(100%, 610px);
+  padding: 88px 0;
 }
 
 .media-card {
@@ -632,7 +698,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 
 .teaching-title {
   margin: 0 0 28px;
-  font-size: 4.6rem;
+  font-size: clamp(3rem, 5vw, 4.6rem);
   font-weight: 900;
   line-height: 0.98;
   letter-spacing: 0;
@@ -660,6 +726,19 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   border-color: rgba(255, 255, 255, 0.34);
   background: rgba(255, 255, 255, 0.14);
   transform: translateY(-2px);
+}
+
+.teaching-section .button-row .btn {
+  min-width: 184px;
+  box-shadow: var(--shadow-strong);
+}
+
+.teaching-section .podcast-links a:first-child {
+  display: none;
+}
+
+.teaching-section .podcast-links {
+  margin-top: 22px;
 }
 
 .button-row {
@@ -787,9 +866,104 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   font-size: 1.2rem;
 }
 
+.connect-panel p + p {
+  margin-top: 8px;
+}
+
+.connect-panel .connect-quote {
+  max-width: 620px;
+  color: var(--color-white);
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.connect-form {
+  width: min(100%, 440px);
+  flex: 0 1 440px;
+  gap: 8px;
+}
+
+.connect-form label {
+  color: var(--color-white);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.connect-form-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.connect-form input {
+  min-width: 0;
+  border-color: rgba(255, 255, 255, 0.42);
+  color: var(--color-stone-900);
+  background: var(--color-white);
+}
+
+.connect-form .btn {
+  flex: 0 0 auto;
+}
+
 .connect-panel .btn-dark:hover {
   color: var(--color-orange-dark);
   background: var(--color-white);
+}
+
+.community-page .connect-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  gap: 72px;
+  margin-bottom: 112px;
+  padding: 60px;
+  border-color: var(--color-stone-200);
+  color: var(--color-stone-900);
+  background: var(--color-stone-50);
+  box-shadow: none;
+}
+
+.community-page .connect-panel .eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--color-orange-dark);
+}
+
+.community-page .connect-panel h2 {
+  margin-bottom: 12px;
+  color: var(--color-stone-900);
+}
+
+.community-page .connect-panel p {
+  color: var(--color-stone-600);
+}
+
+.community-page .connect-form {
+  width: 100%;
+  flex: none;
+}
+
+.community-page .connect-form label {
+  color: var(--color-stone-700);
+}
+
+.community-page .connect-form input {
+  border-color: var(--color-stone-200);
+  background: var(--color-white);
+}
+
+.community-page .connect-form .btn-dark:hover {
+  color: var(--color-white);
+  background: var(--color-orange-dark);
+}
+
+.connect-form-note {
+  margin-top: 12px !important;
+  font-size: 0.88rem !important;
 }
 
 .site-footer {
@@ -934,8 +1108,9 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   line-height: 1.8;
 }
 
-.about-page .large-copy {
-  text-align: justify;
+.about-intro-copy {
+  max-width: 760px;
+  margin-left: max(16px, calc((100% - var(--container)) / 2));
 }
 
 .quote-image {
@@ -964,17 +1139,35 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .beliefs-panel {
-  margin-bottom: 112px;
   padding: 72px;
   border-radius: var(--radius-lg);
-  color: var(--color-white);
-  background: var(--color-stone-950);
+  color: var(--color-stone-900);
+  background: transparent;
+}
+
+.about-beliefs-section {
+  margin-bottom: 112px;
+  background: var(--color-stone-50);
 }
 
 .beliefs-panel h2 {
-  margin: 0 0 36px;
-  font-size: 3.6rem;
+  margin: 0;
+  font-size: 1.8rem;
   line-height: 1.05;
+}
+
+.beliefs-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
+  align-items: start;
+  gap: 48px;
+}
+
+.beliefs-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
 }
 
 .belief-copy {
@@ -993,8 +1186,27 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   line-height: 1.65;
 }
 
+.beliefs-panel .check-list {
+  margin-bottom: 46px;
+}
+
 .values-pastor {
   align-items: start;
+}
+
+.pastor-section {
+  margin: 0 auto;
+}
+
+.pastor-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.pastor-copy .large-copy:last-child {
+  margin-bottom: 0;
 }
 
 .values-card {
@@ -1006,7 +1218,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 .values-card h2,
 .block-title {
   margin: 0 0 34px;
-  font-size: 2.45rem;
+  font-size: 1.8rem;
   line-height: 1.08;
 }
 
@@ -1050,9 +1262,8 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 
 .pastor-card {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1;
   overflow: hidden;
-  margin-bottom: 28px;
   border-radius: var(--radius-lg);
   background: var(--color-stone-200);
 }
@@ -1536,52 +1747,10 @@ select:focus {
   line-height: 1.68;
 }
 
-.next-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(420px, 1.15fr);
-  gap: 48px;
-  align-items: center;
-  margin-top: -18px;
-  margin-bottom: 56px;
-}
-
-.next-hero .page-title {
-  margin-bottom: 18px;
-  font-size: clamp(3.6rem, 6.2vw, 5.7rem);
-  line-height: 0.98;
-}
-
-.next-hero .statement {
-  max-width: 480px;
-  margin-bottom: 0;
-  color: var(--color-stone-500);
-  font-size: 1.08rem;
-  font-weight: 500;
-  line-height: 1.72;
-  text-transform: none;
-}
-
-.next-hero-image,
 .next-step-card img {
   display: block;
   width: 100%;
   object-fit: cover;
-}
-
-.next-hero-image {
-  min-height: 280px;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-}
-
-.next-primary {
-  margin-bottom: 96px;
-}
-
-.next-primary-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
 }
 
 .next-step-card {
@@ -1596,38 +1765,12 @@ select:focus {
   margin-top: 26px;
 }
 
-.next-step-card-primary img {
-  aspect-ratio: 1.18;
-}
-
-.next-step-card-primary > div {
-  display: flex;
-  min-height: 292px;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 36px;
-}
-
-.next-step-card-primary h2 {
-  margin: 16px 0 14px;
-  font-size: 2.4rem;
-  line-height: 1.03;
-}
-
-.next-step-card-primary p {
-  font-size: 1.06rem;
-}
-
-.step-kicker {
-  color: var(--color-orange);
-  font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
 .next-secondary {
   margin-bottom: 112px;
+}
+
+.community-page .next-secondary {
+  margin-top: 72px;
 }
 
 .next-secondary .section-title {
@@ -1639,6 +1782,15 @@ select:focus {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+}
+
+.next-secondary-grid .next-step-card-secondary img {
+  filter: grayscale(1);
+  transition: filter 300ms ease;
+}
+
+.next-secondary-grid .next-step-card-secondary:hover img {
+  filter: grayscale(0);
 }
 
 .next-step-card-secondary {
@@ -1767,6 +1919,7 @@ select:focus {
 .giving-card.online {
   color: var(--color-white);
   background: var(--color-orange);
+  justify-content: flex-start;
 }
 
 .giving-card.online p {
@@ -1791,6 +1944,29 @@ select:focus {
   background: var(--color-black);
 }
 
+.payment-assurance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 2px 0 0 !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.payment-assurance svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
 .small-note {
   margin: 0;
   color: var(--color-stone-400);
@@ -1801,6 +1977,14 @@ select:focus {
 @media (min-width: 900px) {
   .hero h1 {
     font-size: 8rem;
+  }
+
+  .community-page .hero h1 {
+    font-size: 6.6rem;
+  }
+
+  .about-page .hero h1 {
+    font-size: 6rem;
   }
 
   .hero p {
@@ -1817,11 +2001,23 @@ select:focus {
 }
 
 @media (min-width: 921px) {
-  .about-page .page-shell {
+  .about-page .page-shell > .container,
+  .about-page .about-beliefs-section > .container,
+  .community-page .page-shell > .container {
+    max-width: 980px;
+  }
+
+  .about-page .beliefs-panel {
+    padding-left: 0;
+  }
+
+  .about-page .page-shell,
+  .community-page .page-shell {
     padding-top: 128px;
   }
 
-  .about-page .page-title {
+  .about-page .page-title,
+  .community-page .page-title {
     margin-bottom: 48px;
     font-size: 5.6rem;
   }
@@ -1830,6 +2026,14 @@ select:focus {
 @media (min-width: 1180px) {
   .hero h1 {
     font-size: 9.4rem;
+  }
+
+  .community-page .hero h1 {
+    font-size: 7.6rem;
+  }
+
+  .about-page .hero h1 {
+    font-size: 7rem;
   }
 
 }
@@ -1846,6 +2050,8 @@ select:focus {
   }
 
   .two-column,
+  .pastor-layout,
+  .beliefs-layout,
   .card-grid.three,
   .giving-grid,
   .giving-intro,
@@ -1854,8 +2060,6 @@ select:focus {
   .first-sundays-details,
   .midweek-hero,
   .midweek-gatherings,
-  .next-hero,
-  .next-primary-grid,
   .next-secondary-grid {
     grid-template-columns: 1fr;
   }
@@ -1869,8 +2073,13 @@ select:focus {
     margin-bottom: 64px;
   }
 
-  .next-step-card-primary > div {
-    min-height: 0;
+  .pastor-card {
+    max-width: 420px;
+  }
+
+  .beliefs-image {
+    width: 100%;
+    max-width: 420px;
   }
 
   .next-step-card-secondary {
@@ -1891,6 +2100,19 @@ select:focus {
   .connect-panel,
   .footer-bottom {
     align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .connect-form {
+    width: 100%;
+  }
+
+  .community-page .connect-panel {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .connect-form-fields {
     flex-direction: column;
   }
 
@@ -1981,6 +2203,14 @@ select:focus {
     font-size: 3.65rem;
   }
 
+  .community-page .hero h1 {
+    font-size: 3.3rem;
+  }
+
+  .about-page .hero h1 {
+    font-size: 3.2rem;
+  }
+
   .hero p {
     font-size: 1rem;
   }
@@ -2047,6 +2277,15 @@ select:focus {
     padding: 28px;
   }
 
+  .community-page .connect-panel {
+    padding: 32px 28px;
+    margin-bottom: 76px;
+  }
+
+  .community-page .connect-form .btn {
+    width: 100%;
+  }
+
   .giving-intro div {
     padding-left: 24px;
   }
@@ -2066,32 +2305,16 @@ select:focus {
     font-size: 3rem;
   }
 
-  .next-hero {
-    gap: 28px;
-    margin-top: -10px;
-    margin-bottom: 48px;
-  }
-
-  .next-hero .page-title {
-    font-size: 3.1rem;
-  }
-
-  .next-hero-image {
-    min-height: 200px;
-  }
-
-  .next-primary,
   .next-secondary {
     margin-bottom: 76px;
   }
 
-  .next-step-card-primary > div,
-  .next-step-card-secondary > div {
-    padding: 28px;
+  .community-page .next-secondary {
+    margin-top: 56px;
   }
 
-  .next-step-card-primary h2 {
-    font-size: 2.4rem;
+  .next-step-card-secondary > div {
+    padding: 28px;
   }
 
   .next-step-card-secondary {
@@ -2113,7 +2336,10 @@ select:focus {
     padding: 28px;
   }
 
-  .beliefs-panel h2,
+  .beliefs-panel h2 {
+    font-size: 1.8rem;
+  }
+
   .connect-panel h2 {
     font-size: 2.4rem;
   }
@@ -2166,6 +2392,19 @@ select:focus {
 
   .home-page .two-column {
     gap: 36px;
+  }
+
+  .home-page .teaching-section {
+    min-height: 0;
+    padding: 0;
+  }
+
+  .home-page .teaching-content {
+    min-height: 0;
+  }
+
+  .home-page .teaching-copy {
+    padding: 72px 0;
   }
 
   .home-page .image-mosaic {
@@ -2252,21 +2491,7 @@ select:focus {
     margin-top: 28px;
   }
 
-  .home-page .teaching-section .media-card {
-    aspect-ratio: 16 / 9;
-  }
-
-  .home-page .teaching-section .media-card.tilted {
-    transform: none;
-  }
-
-  .home-page .teaching-section .play-button {
-    width: 64px;
-    height: 64px;
-  }
-
-  .home-page .teaching-section .play-button svg {
-    width: 1.5rem;
-    height: 1.5rem;
+  .home-page .teaching-backdrop {
+    background: rgba(17, 17, 15, 0.84);
   }
 }
