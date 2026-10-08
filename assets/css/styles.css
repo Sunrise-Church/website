@@ -1187,9 +1187,13 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 
 .pastor-layout {
   display: grid;
-  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.7fr);
   align-items: center;
   gap: 40px;
+}
+
+.pastor-copy .large-copy:last-child {
+  margin-bottom: 0;
 }
 
 .values-card {
