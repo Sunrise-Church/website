@@ -1156,6 +1156,21 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   line-height: 1.05;
 }
 
+.beliefs-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.beliefs-image {
+  width: calc(100% + 80px);
+  max-width: none;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
 .belief-copy {
   display: grid;
   gap: 24px;
@@ -1173,7 +1188,6 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .beliefs-panel .check-list {
-  max-width: 800px;
   margin-bottom: 46px;
 }
 
@@ -2038,6 +2052,7 @@ select:focus {
 
   .two-column,
   .pastor-layout,
+  .beliefs-layout,
   .card-grid.three,
   .giving-grid,
   .giving-intro,
@@ -2060,6 +2075,11 @@ select:focus {
   }
 
   .pastor-card {
+    max-width: 420px;
+  }
+
+  .beliefs-image {
+    width: 100%;
     max-width: 420px;
   }
 
