@@ -1139,7 +1139,7 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .beliefs-panel {
-  padding: 72px;
+  padding: 72px 0;
   border-radius: var(--radius-lg);
   color: var(--color-stone-900);
   background: transparent;
@@ -1151,21 +1151,21 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .beliefs-panel h2 {
-  margin: 0;
+  margin: 0 0 26px;
   font-size: 1.8rem;
   line-height: 1.05;
 }
 
 .beliefs-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: start;
-  gap: 48px;
+  gap: 64px;
 }
 
 .beliefs-image {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
   object-fit: cover;
 }
@@ -2002,13 +2002,8 @@ select:focus {
 
 @media (min-width: 921px) {
   .about-page .page-shell > .container,
-  .about-page .about-beliefs-section > .container,
   .community-page .page-shell > .container {
     max-width: 980px;
-  }
-
-  .about-page .beliefs-panel {
-    padding-left: 0;
   }
 
   .about-page .page-shell,
@@ -2265,7 +2260,6 @@ select:focus {
 
   .feature-card,
   .expect-card,
-  .beliefs-panel,
   .values-card,
   .form-card,
   .giving-card,
@@ -2275,6 +2269,10 @@ select:focus {
   .midweek-gatherings,
   .connect-panel {
     padding: 28px;
+  }
+
+  .beliefs-panel {
+    padding: 28px 0;
   }
 
   .community-page .connect-panel {
