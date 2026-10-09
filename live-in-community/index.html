@@ -178,14 +178,22 @@
             <h2 id="community-contact-heading">Ready to make Sunrise your home?</h2>
             <p>If Sunrise feels like home, we’d love to help you take the next step.</p>
           </div>
-          <form class="connect-form" data-visual-form>
-            <label for="community-email">Your email address</label>
+          <form class="connect-form" action="https://formspree.io/f/mljgbzyy" method="POST" data-community-form>
             <div class="connect-form-fields">
-              <input id="community-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required>
-              <button class="btn btn-dark" type="submit">I’m ready</button>
+              <label for="community-name">Name
+                <input id="community-name" name="name" type="text" autocomplete="name" required>
+              </label>
+              <label for="community-email">Email address
+                <input id="community-email" name="email" type="email" autocomplete="email" required>
+              </label>
+              <label for="community-phone">Phone number
+                <input id="community-phone" name="phone" type="tel" autocomplete="tel" required>
+              </label>
             </div>
-            <p class="connect-form-note">We’ll send you the simple next step.</p>
+            <p class="connect-form-error" data-community-error role="alert" hidden></p>
+            <button class="btn btn-dark" type="submit" data-community-submit>I’m ready</button>
           </form>
+          <p class="connect-form-success" data-community-success role="status" tabindex="-1" hidden>Thank you! We’ll be in touch soon about your next step.</p>
         </div>
       </section>
     </main>

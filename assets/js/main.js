@@ -66,12 +66,6 @@
     link.addEventListener("click", () => setMenuOpen(false));
   });
 
-  document.querySelectorAll("[data-visual-form]").forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-    });
-  });
-
   const connectPanel = document.querySelector("[data-home-connect]");
   if (connectPanel) {
     const openButton = connectPanel.querySelector("[data-connect-open]");
@@ -114,6 +108,42 @@
         submitButton.disabled = false;
         submitButton.textContent = "Send message";
         form.removeAttribute("aria-busy");
+      }
+    });
+  }
+
+  const communityForm = document.querySelector("[data-community-form]");
+  if (communityForm) {
+    const submitButton = communityForm.querySelector("[data-community-submit]");
+    const errorMessage = communityForm.querySelector("[data-community-error]");
+    const successMessage = document.querySelector("[data-community-success]");
+
+    communityForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      errorMessage.hidden = true;
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending…";
+      communityForm.setAttribute("aria-busy", "true");
+
+      try {
+        const response = await fetch(communityForm.action, {
+          method: "POST",
+          body: new FormData(communityForm),
+          headers: { Accept: "application/json" },
+        });
+
+        if (!response.ok) throw new Error("Formspree rejected the submission");
+
+        communityForm.hidden = true;
+        successMessage.hidden = false;
+        successMessage.focus();
+      } catch {
+        errorMessage.textContent = "Sorry, we couldn't send your details. Please try again.";
+        errorMessage.hidden = false;
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "I’m ready";
+        communityForm.removeAttribute("aria-busy");
       }
     });
   }

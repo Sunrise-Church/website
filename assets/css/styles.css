@@ -1031,6 +1031,17 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   flex: none;
 }
 
+.community-page .connect-form[hidden],
+.community-page .connect-form-error[hidden],
+.community-page .connect-form-success[hidden] {
+  display: none;
+}
+
+.community-page .connect-form-fields {
+  flex-direction: column;
+  gap: 16px;
+}
+
 .community-page .connect-form label {
   color: var(--color-stone-700);
 }
@@ -1040,14 +1051,33 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   background: var(--color-white);
 }
 
+.community-page .connect-form .btn {
+  width: fit-content;
+  margin-top: 22px;
+  padding-inline: 22px;
+}
+
 .community-page .connect-form .btn-dark:hover {
   color: var(--color-white);
   background: var(--color-orange-dark);
 }
 
-.connect-form-note {
-  margin-top: 12px !important;
-  font-size: 0.88rem !important;
+.community-page .connect-form .btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.community-page .connect-form-error {
+  margin: 12px 0;
+  color: var(--color-orange-dark);
+}
+
+.community-page .connect-form-success {
+  align-self: center;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .site-footer {
@@ -2367,10 +2397,6 @@ select:focus {
   .community-page .connect-panel {
     padding: 32px 28px;
     margin-bottom: 76px;
-  }
-
-  .community-page .connect-form .btn {
-    width: 100%;
   }
 
   .giving-intro div {
