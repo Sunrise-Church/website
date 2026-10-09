@@ -988,7 +988,6 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 }
 
 .home-connect-success {
-  font-family: var(--font-serif);
   font-size: 1.5rem !important;
   font-weight: 700;
   line-height: 1.35;
@@ -1074,7 +1073,6 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
 
 .community-page .connect-form-success {
   align-self: center;
-  font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.35;
