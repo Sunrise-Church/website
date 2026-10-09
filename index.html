@@ -12,7 +12,7 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/main.js?v=20261009" defer></script>
   </head>
   <body class="home-page">
     <header class="site-nav" data-site-nav>
@@ -225,19 +225,33 @@
 
       <section class="section">
         <div class="container">
-          <div class="connect-panel">
+          <div class="connect-panel home-connect-panel" data-home-connect>
             <div>
               <h2>New at Sunrise?</h2>
               <p>We'd love to connect with you and hear your story.</p>
             </div>
-            <a
-              class="btn btn-dark"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdkd94bGbV7KfPYGCHXU_zOZpl9I7Jf3Z4dysCXfD3ClEZ5XQ/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Connected
-            </a>
+            <div class="home-connect-action">
+              <button class="btn btn-dark" type="button" data-connect-open aria-controls="home-connect-form" aria-expanded="false">Get Connected</button>
+              <form class="home-connect-form" id="home-connect-form" action="https://formspree.io/f/xppqdbnp" method="POST" data-connect-form hidden>
+                <div class="home-connect-fields">
+                  <label for="connect-name">Name
+                    <input id="connect-name" name="name" type="text" autocomplete="name" required>
+                  </label>
+                  <label for="connect-email">Email
+                    <input id="connect-email" name="email" type="email" autocomplete="email" required>
+                  </label>
+                  <label for="connect-phone">Phone number
+                    <input id="connect-phone" name="phone" type="tel" autocomplete="tel" required>
+                  </label>
+                  <label class="home-connect-message" for="connect-message">Message
+                    <textarea id="connect-message" name="message" rows="4" required></textarea>
+                  </label>
+                </div>
+                <p class="home-connect-error" data-connect-error role="alert" hidden></p>
+                <button class="btn btn-dark" type="submit" data-connect-submit>Send message</button>
+              </form>
+              <p class="home-connect-success" data-connect-success role="status" tabindex="-1" hidden>Thank you for getting in touch! We’ll be in contact soon.</p>
+            </div>
           </div>
         </div>
       </section>

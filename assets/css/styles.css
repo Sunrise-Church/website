@@ -915,6 +915,90 @@ body.home-page .site-nav:not(.nav-scrolled) .visit-pill:hover {
   background: var(--color-white);
 }
 
+.home-connect-action {
+  flex: 0 0 auto;
+}
+
+.home-connect-panel.is-open .home-connect-action {
+  width: min(100%, 560px);
+  flex: 0 1 560px;
+}
+
+.home-connect-action > [hidden],
+.home-connect-form[hidden],
+.home-connect-success[hidden],
+.home-connect-error[hidden] {
+  display: none;
+}
+
+.home-connect-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.home-connect-fields label {
+  display: grid;
+  gap: 7px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.home-connect-fields .home-connect-message {
+  grid-column: 1 / -1;
+}
+
+.home-connect-fields input,
+.home-connect-fields textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  color: var(--color-stone-900);
+  background: var(--color-white);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.home-connect-fields textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.home-connect-fields input:focus,
+.home-connect-fields textarea:focus {
+  outline: 2px solid var(--color-stone-950);
+  outline-offset: 2px;
+}
+
+.home-connect-panel .home-connect-error,
+.home-connect-panel .home-connect-success {
+  color: var(--color-white);
+}
+
+.home-connect-error {
+  margin: 0 0 16px !important;
+  font-size: 0.95rem !important;
+}
+
+.home-connect-success {
+  font-family: var(--font-serif);
+  font-size: 1.5rem !important;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.home-connect-form .btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
 .community-page .connect-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
@@ -2102,6 +2186,11 @@ select:focus {
     width: 100%;
   }
 
+  .home-connect-action {
+    width: 100%;
+    flex: none;
+  }
+
   .community-page .connect-panel {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -2340,6 +2429,10 @@ select:focus {
 
   .connect-panel h2 {
     font-size: 2.4rem;
+  }
+
+  .home-connect-fields {
+    grid-template-columns: 1fr;
   }
 
   .affiliations-panel {
